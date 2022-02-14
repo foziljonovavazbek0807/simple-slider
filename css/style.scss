@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.carousel {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .carousel__item,
+    .carousel__item-hidden {
+        display: none;
+    }
+    .carousel__item {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .carousel__item-visible {
+        display: block;
+        animation: fadeVisibility 0.5s;
+    }
+    .carousel__actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        i {
+            border-radius: 100%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.4s;
+            font-weight: 500;
+            border: 1.5px solid #fff;
+            padding: 7px;
+            color: #fff;
+            background: transparent;
+        }
+        #carousel__button-prev {
+            margin-left: 20px;
+        }
+        #carousel__button-next {
+            margin-right: 20px;
+        }
+    }
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
